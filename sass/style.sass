@@ -1,0 +1,101 @@
+@import 'normolize'
+@import 'fonts'
+@import 'elements'
+@import 'header'
+
+.main
+    max-width: 1920px
+    margin: 0 auto
+    padding: 0 30px 80px
+    &-content
+        gap: 60px 2%
+        @media screen and ( min-width: 961px )
+
+    &-sidebar
+        width: 250px
+        img
+            display: none
+
+    @media screen and ( min-width: 961px )
+        padding: 0 50px 100px
+        &-content
+            justify-content: flex-start
+            width: calc( 100% - 300px )
+            margin-left: auto
+            gap: 90px 2%
+        &-sidebar
+            img
+                display: block
+
+.item
+    text-align: left
+    display: block
+    width: 32%
+    position: relative
+    z-index: 1
+    cursor: pointer
+    &__tag
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        line-height: 50px
+        text-align: center
+        color: #fff
+        display: inline-block
+        position: absolute
+        top: 10px
+        right: 10px
+        z-index: 111
+        background-color: #ff4a4a
+
+    &-wrap
+        gap: 90px 2.66%
+        justify-content: flex-start
+
+    &-img
+        margin-bottom: 20px
+        img
+            width: 100%
+            aspect-ratio: 4/5.5
+            object-fit: cover
+            display: none
+            &:first-of-type
+                display: block
+
+    &:hover
+        img
+            &:first-of-type
+                display: none
+            &:nth-of-type(2)
+                display: block
+                animation: itemHover .2s ease forwards
+
+    &__heading
+        font-size: 18px
+        margin: 0 0 8px
+        font-weight: 600
+
+    &__text
+        word-break: break-word
+        font-weight: 300
+        margin: 0 0 12px
+
+    &__price
+        font-size: 16px
+        line-height: 1.35
+        font-weight: 400
+
+@media screen and ( max-width: 960px )
+    .item
+        width: 49%
+        &__heading
+            font-size: 13px 
+
+
+@import 'modal'
+
+@keyframes itemHover
+    0%
+        opacity: .6
+    100%
+        opacity: 1

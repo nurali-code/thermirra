@@ -1,0 +1,83 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+$prime: #f8563b
+$second: #2b375d
+
+body
+    min-height: 100vh
+    color: #000
+    font-weight: 300
+    font-size: 13px
+    line-height: 1.55
+    background-color: #fff
+    font-family: 'Montserrat', sans-serif
+
+    position: relative
+    z-index: 1
+
+    @media screen and ( max-width: 961px )
+        font-size: 11px
+
+    &.is_active
+        overflow: hidden
+
+img
+    max-width: 100%
+
+a,
+button
+    color: #000
+    text-decoration: none
+    transition: all ease .3s
+    background-color: transparent
+    &:active
+        transform: scale(.98)
+
+.wrap
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    flex-wrap: wrap
+
+mark
+    background: transparent
+    color: $prime
+
+ul
+    list-style: none
+    li
+        font-size: 13px
+        line-height: 1.55
+        padding: 3px 0
+
+.btn,
+.btn_2
+    display: inline-block
+    color: #ffffff
+    background-color: #000000
+    border-radius: 4px
+    font-weight: 600
+    padding: 13px 37px 11px
+    text-align: center
+    &:hover
+        opacity: .6
+
+    &:active
+        opacity: 1
+
+.btn
+    &_2 
+        border: 1px solid #fff
+        border-radius: 60px
+        &:hover 
+            background-color: #fff
+            color: #000
+            opacity: 1
+
+section
+    padding: 60px 0 100px
