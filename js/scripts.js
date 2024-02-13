@@ -15,8 +15,20 @@ $(function () {
     }
 
     $('[data-modal]').on('click', function (e) {
+        $('.card-slider').slick({
+            arrows: true,
+            infinite: false,
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            touchThreshold: 8,
+            mobileFirst: true,
+            centerPadding: '0px',
+            centerMode: true,
+        });
         e.preventDefault();
         showModal('#' + $(this).attr("data-modal"));
+
     });
 
     $('.modal-close').on('click', () => {
