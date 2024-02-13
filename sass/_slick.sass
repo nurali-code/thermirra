@@ -1,5 +1,3 @@
-/* Slider */
-
 .slick
     &-slider
         position: relative
@@ -59,8 +57,8 @@
         margin: 0
         min-height: 1px
         transition: all ease .3s
-        [dir="rtl"] &
-        float: right
+        &[dir="rtl"] &
+            float: right
 
         img
             display: block
@@ -88,8 +86,8 @@
         display: none
 
     &-arrow
-        width: 74px
-        height: 74px
+        width: 40px
+        height: 40px
         font-size: 0
         top: 50%
         transform: translateY(-50%) !important
@@ -99,26 +97,28 @@
         transform-origin: 50% 50%
         border: none
         background-image: url('../img/slider_arrow.svg')
+        background-color: #fff
         background-repeat: no-repeat
         background-position: center center
-        background-size: 80%
+        background-size: auto 50%
+        border-radius: 50%
         display: inline-block
-        z-index: 999
+        z-index: 9999
 
         &::before
             display: none
 
     &-prev
-        left: -74px
+        left: 30px
         transform: scaleX(-1) translateY(-50%) !important
 
     &-next
-        right: -74px
+        right: 30px
 
     &-disabled
         cursor: no-drop
         pointer-events: none
-        opacity: .2
+        opacity: 0
 
     &-dots
         display: block
@@ -151,7 +151,7 @@
             button
                 background-color: rgba(0, 0, 0, 0)
 
-    @media screen and ( max-width: 1200px )
+    @media screen and ( max-width: 960px )
         &-arrow
-            width: 40px
-            height: 40px
+            width: 24px
+            height: 24px
