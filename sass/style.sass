@@ -58,16 +58,16 @@
             width: 100%
             aspect-ratio: 4/5.5
             object-fit: cover
-            display: none
+            display: none !important
             &:first-of-type
-                display: block
+                display: block !important
 
     &:hover
         img
             &:first-of-type
-                display: none
+                display: none !important
             &:nth-of-type(2)
-                display: block
+                display: block !important
                 animation: itemHover .2s ease forwards
 
     &__heading
@@ -89,7 +89,7 @@
     .item
         width: 49%
         &__heading
-            font-size: 13px 
+            font-size: 12px 
 
 
 @import 'slick'
