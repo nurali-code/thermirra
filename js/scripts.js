@@ -5,18 +5,15 @@ $('.menu_btn').on('click', function () {
 
 function hideModals() {
     $('.modal').fadeOut(200);
-    $('body, .menu, .menu_btn').removeClass('is_active');
+    $('body, .menu, .menu_btn, .modal').removeClass('is_active');
     $('.slick-initialized.slick-slider').slick('unslick');
 };
 
 $(function () {
     function showModal(id) {
-        $(id).fadeIn(300); $('body').addClass('is_active');
-    }
-
-    $('[data-modal]').on('click', function (e) {
-        e.preventDefault(); hideModals();
-        $('.card-slider').slick({
+        $(id).fadeIn(300).addClass('is_active');
+        $('body').addClass('is_active');
+        $(id + ' .card-slider').slick({
             arrows: true,
             infinite: false,
             dots: false,
@@ -24,10 +21,10 @@ $(function () {
             slidesToScroll: 1,
             touchThreshold: 8,
             centerPadding: '0px',
-            asNavFor: '.card-nav',
+            asNavFor: id + ' .card-nav',
             centerMode: true,
         });
-        $('.card-nav').slick({
+        $(id + ' .card-nav').slick({
             arrows: false,
             infinite: false,
             swipeToSlide: () => {
@@ -39,9 +36,9 @@ $(function () {
             slidesToScroll: 8,
             variableWidth: true,
             focusOnSelect: true,
-            asNavFor: '.card-slider',
+            asNavFor: id + ' .card-slider',
         });
-        $('.more-slider').slick({
+        $(id + ' .more-slider').slick({
             arrows: true,
             infinite: false,
             dots: false,
@@ -49,7 +46,6 @@ $(function () {
             slidesToScroll: 1,
             touchThreshold: 8,
             centerPadding: '0px',
-            asNavFor: '.card-nav',
             responsive: [
                 {
                     breakpoint: 960,
@@ -57,6 +53,10 @@ $(function () {
                 }
             ]
         });
+    }
+
+    $('[data-modal]').on('click', function (e) {
+        e.preventDefault(); hideModals();
         showModal('#' + $(this).attr("data-modal"));
     });
 
