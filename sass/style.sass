@@ -94,6 +94,20 @@
         width: 100%
         justify-content: center
 
+    &-toggler
+        font-size: 12px
+        font-weight: 500
+        background-image: url('../img/filter-icon.svg')
+        background-repeat: no-repeat
+        background-position: center left
+        background-size: auto 17px
+        display: inline-block
+        padding: 10px 0 10px 21px
+        &.is_active
+            opacity: .6
+        @media screen and ( min-width: 961px )
+            display: none !important
+
     &_btn
         display: block
         font-size: 14px
@@ -110,9 +124,16 @@
     @media screen and ( max-width: 960px )
         &-wrap
             margin-bottom: 20px
+
         &_btn
             font-size: 12px
-            margin: 0 15px 10px
+            padding: 0 15px 10px
+            margin: 0
+
+        &-content
+            padding-top: 12px
+            display: none
+            border-bottom: 1px solid rgba(0,0,0,.2)
 
 .dropdown
     padding: 10px 0
@@ -158,7 +179,7 @@
                     right: 1px
 
     @media screen and ( min-width: 961px )
-        &__btn 
+        &__btn
             pointer-events: none
         &-content
             display: block !important

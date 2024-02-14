@@ -15,6 +15,11 @@ $('.dropdown__btn').on('click', function () {
     $('.dropdown__btn').not(this).removeClass('is_active');
     $(this).toggleClass('is_active').next('.dropdown-content').slideToggle();
 });
+
+$('.filter-toggler').on('click', function () {
+    $(this).toggleClass('is_active');
+    $('.filter-content').slideToggle(300);
+});
 $('.filter_btn').on('click', function () {
     $(this).addClass('is_active').siblings().removeClass('is_active');
 });
