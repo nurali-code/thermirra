@@ -9,6 +9,17 @@ function hideModals() {
     $('.slick-initialized.slick-slider').slick('unslick');
 };
 
+$('.dropdown__btn').on('click', function () {
+    var $dropdownContent = $('.dropdown-content');
+    $dropdownContent.not($(this).next('.dropdown-content')).slideUp();
+    $('.dropdown__btn').not(this).removeClass('is_active');
+    $(this).toggleClass('is_active').next('.dropdown-content').slideToggle();
+});
+$('.filter_btn').on('click', function () {
+    $(this).addClass('is_active').siblings().removeClass('is_active');
+});
+
+
 $(function () {
     function showModal(id) {
         $(id).fadeIn(300).addClass('is_active');
